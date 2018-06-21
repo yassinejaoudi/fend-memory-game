@@ -55,4 +55,10 @@ function shuffle(array) {
      this.classList.toggle('disabled');
  }
 
- 
+ for(var i=0; i<nodeList.length; i++){
+     nodeList[i].addEventListener('click', displayCard);
+ }
+
+
+
+
