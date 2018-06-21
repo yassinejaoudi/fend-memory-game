@@ -10,6 +10,17 @@ let nodeList = [...cards];
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+const deck = document.querySelector('.deck');
+function game(){
+    var shuffleCards = shuffle(nodeList);
+    for (var i = 0; i<shuffleCards.length; i++){
+        [].forEach.call(shuffleCards, function(item){
+            deck.appendChild(item);
+        });
+    }
+}
+
+window.onload = game();
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
