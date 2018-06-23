@@ -73,6 +73,16 @@ function opened(){
 
 }
 
+function cardMatch(){
+    openCard[0].classList.add('match');
+    openCard[1].classList.add('match');
+    openCard[0].classList.remove('show', 'open');
+    openCard[1].classList.remove('show', 'open');
+    openCards = [];
+}
+
+
+
 
 
 
