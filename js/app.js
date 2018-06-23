@@ -59,6 +59,23 @@ function shuffle(array) {
      nodeList[i].addEventListener('click', displayCard);
  }
 
+ // The logic part of the game
+var openCard = new Array();
+function opened(){
+     openCard.push(this);
+     var length = openCard.length;
+     if(length === 2){
+         if(openCard[0].type === openCard[1].type){
+         cardMatch();
+     }else{
+         cardUnmatch();}
+    }
+
+}
+
+
+
+
 
 
 
