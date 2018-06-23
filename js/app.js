@@ -52,7 +52,6 @@ function shuffle(array) {
  var displayCard = function(){
      this.classList.toggle('show');
      this.classList.toggle('open');
-     this.classList.toggle('disabled');
  }
 
  for(var i=0; i<nodeList.length; i++){
@@ -85,10 +84,13 @@ function cardMatch(){
 function cardUnmatch(){
     openCard[0].classList.add('unmatched');
     openCard[1].classList.add('unmatched');
-    openCard = [];
+    setTimeout(() => {
+        openCard[0].classList.remove('show', 'open','unmatched');
+        openCard[1].classList.remove('show', 'open','unmatched');
+        openCard=[];
+    }, 300);
 }
 
-//Empty the array wrapped in a function
 
 
 
