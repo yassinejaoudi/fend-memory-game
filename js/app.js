@@ -57,6 +57,7 @@ function shuffle(array) {
 
  for(var i=0; i<nodeList.length; i++){
      nodeList[i].addEventListener('click', displayCard);
+     nodeList[i].addEventListener('click',opened);
  }
 
  // The logic part of the game
@@ -81,6 +82,10 @@ function cardMatch(){
     openCards = [];
 }
 
+function cardUnmatch(){
+    openCard[0].classList.add('unmatch');
+    openCard[1].classList.add('unmatch');
+}
 
 
 
