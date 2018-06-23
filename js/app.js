@@ -68,7 +68,7 @@ function opened(){
      if(length === 2){
          if(openCard[0].type === openCard[1].type){
          cardMatch();
-     }else{
+        }else{
          cardUnmatch();}
     }
 
@@ -79,13 +79,18 @@ function cardMatch(){
     openCard[1].classList.add('match');
     openCard[0].classList.remove('show', 'open');
     openCard[1].classList.remove('show', 'open');
-    openCards = [];
+    openCard = [];
 }
 
 function cardUnmatch(){
-    openCard[0].classList.add('unmatch');
-    openCard[1].classList.add('unmatch');
+    openCard[0].classList.add('unmatched');
+    openCard[1].classList.add('unmatched');
+    openCard = [];
 }
+
+//Empty the array wrapped in a function
+
+
 
 
 
