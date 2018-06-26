@@ -57,6 +57,7 @@ function shuffle(array) {
  for(var i=0; i<nodeList.length; i++){
      nodeList[i].addEventListener('click', displayCard);
      nodeList[i].addEventListener('click',opened);
+     nodeList[i].addEventListener('click', gameDecision);
  }
 
  // The logic part of the game
@@ -89,6 +90,14 @@ function cardUnmatch(){
         openCard[1].classList.remove('show', 'open','unmatched');
         openCard=[];
     }, 300);
+}
+
+//Winning condition
+let matchCards = document.getElementsByClassName('match');
+function gameDecision(){
+    if(matchCards.length === 16){
+        console.log('I winned'); 
+    }
 }
 
 
