@@ -100,11 +100,16 @@ function cardUnmatch(){
 let matchCards = document.getElementsByClassName('match');
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
+let loseModal = document.querySelector('.losingModal');
 
 function gameDecision(){
     if(matchCards.length === 16){
         modal.style.display = 'block';
         winModal.style.display = 'block';
+    }
+    if(count === 15){
+        modal.style.display = 'block';
+        loseModal.style.display = 'block';
     }
 }
 
