@@ -57,7 +57,10 @@ function shuffle(array) {
  for(var i=0; i<nodeList.length; i++){
      nodeList[i].addEventListener('click', displayCard);
      nodeList[i].addEventListener('click',opened);
+     //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
      nodeList[i].addEventListener('click', gameDecision);
+     //Listen to clicks for count
+     nodeList[i].addEventListener('click', counter);
  }
 
  // The logic part of the game
@@ -93,16 +96,26 @@ function cardUnmatch(){
 }
 
 //Winning condition
+
 let matchCards = document.getElementsByClassName('match');
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
+
 function gameDecision(){
     if(matchCards.length === 16){
-        console.log('up to here, i am working!!');
         modal.style.display = 'block';
         winModal.style.display = 'block';
     }
 }
+
+//Moves Counter
+var count = '';
+let moves = document.querySelector('.moves') ;
+function counter(){
+    count++;
+    moves.innerHTML = count;
+}
+
 
 
 
