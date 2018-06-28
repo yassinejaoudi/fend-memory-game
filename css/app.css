@@ -113,3 +113,48 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/* 
+* Styles for the results modal 
+*/
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+}
+
+.closeButton{
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
+
+.closeButton:hover, .closeButton:focus{
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.winningModal{
+  display: none;
+  text-align: center;
+}
+
+.losingModal{
+  display: none;
+  text-align: center;
+}
