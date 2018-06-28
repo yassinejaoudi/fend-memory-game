@@ -18,6 +18,10 @@ function game(){
             deck.appendChild(item);
         });
     }
+    // Remove match cards in case of closing result modal
+    for (var i =0; i<nodeList.length; i++){
+        nodeList[i].classList.remove('match');
+    }
 }
 
 window.onload = game();
@@ -104,10 +108,12 @@ let loseModal = document.querySelector('.losingModal');
 
 function gameDecision(){
     if(matchCards.length === 16){
+        //TODO: wrap into a fct
         modal.style.display = 'block';
         winModal.style.display = 'block';
     }
     if(count === 15){
+        //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
     }
@@ -120,6 +126,12 @@ function counter(){
     count++;
     moves.innerHTML = count;
 }
+
+//Wire the close button with start game
+let closeBtn = document.querySelector('.closeButton');
+closeBtn.addEventListener('click', ()=>{
+    game();
+});
 
 
 
