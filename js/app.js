@@ -94,9 +94,13 @@ function cardUnmatch(){
 
 //Winning condition
 let matchCards = document.getElementsByClassName('match');
+let modal = document.querySelector('.modal');
+let winModal = document.querySelector('.winningModal');
 function gameDecision(){
     if(matchCards.length === 16){
-        console.log('I winned'); 
+        console.log('up to here, i am working!!');
+        modal.style.display = 'block';
+        winModal.style.display = 'block';
     }
 }
 
