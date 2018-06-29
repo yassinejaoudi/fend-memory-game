@@ -142,7 +142,12 @@ function reload(){
     moves.innerHTML = 0;
 }
 
-//wire restart to r
+//wire restart button to reload initial state game
+let restartBtn = document.querySelector('.restart');
+restartBtn.addEventListener('click', ()=>{
+    game();
+    reload();
+});
 
 
 
