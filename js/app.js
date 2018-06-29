@@ -131,10 +131,18 @@ function counter(){
 let closeBtn = document.querySelector('.closeButton');
 closeBtn.addEventListener('click', ()=>{
     game();
+    reload();
+});
+
+//Reload to initial state of the game
+function reload(){
     modal.style.display = 'none';
     winModal.style.display = 'none';
     loseModal.style.display = 'none';
-});
+    moves.innerHTML = 0;
+}
+
+//wire restart to r
 
 
 
