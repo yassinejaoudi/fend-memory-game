@@ -112,7 +112,7 @@ function gameDecision(){
         modal.style.display = 'block';
         winModal.style.display = 'block';
     }
-    if(count === 15){
+    if(count === 33){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
@@ -131,6 +131,9 @@ function counter(){
 let closeBtn = document.querySelector('.closeButton');
 closeBtn.addEventListener('click', ()=>{
     game();
+    modal.style.display = 'none';
+    winModal.style.display = 'none';
+    loseModal.style.display = 'none';
 });
 
 
