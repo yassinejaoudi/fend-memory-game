@@ -54,8 +54,9 @@ function shuffle(array) {
  */
 
  var displayCard = function(){
-     this.classList.toggle('show');
-     this.classList.toggle('open');
+        this.classList.toggle('show');
+        this.classList.toggle('open');
+        this.classList.toggle('disqualify');
  }
 
  for(var i=0; i<nodeList.length; i++){
@@ -82,8 +83,11 @@ function opened(){
 }
 
 function cardMatch(){
-    openCard[0].classList.add('match');
-    openCard[1].classList.add('match');
+    let disable = openCard[0].getElementsByClassName('disqualify');
+    if(disable == 1){
+        openCard[0].classList.add('match');
+        openCard[1].classList.add('match');
+    }
     openCard[0].classList.remove('show', 'open');
     openCard[1].classList.remove('show', 'open');
     openCard = [];
@@ -98,6 +102,7 @@ function cardUnmatch(){
         openCard=[];
     }, 300);
 }
+
 
 //Winning condition
 
@@ -149,6 +154,9 @@ restartBtn.addEventListener('click', ()=>{
     reload();
 });
 
+//TODO: Fix the click card multiple times
+
+//TODO: Click on the same card, the counter should not add the move
 
 
 
