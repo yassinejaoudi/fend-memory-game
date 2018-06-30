@@ -87,6 +87,11 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card .disqualify{
+    pointer-events: none;
+    /* opacity: 0.9; */
+}
+
 /*
  * Styles for the Score Panel
  */
@@ -158,3 +163,33 @@ h1 {
   display: none;
   text-align: center;
 }
+
+
+/* 
+Media query for phones with max width of 320 px on portrait mode
+ */
+
+ @media screen and (max-width: 320px){
+     .h1{
+         font-weight: 150;
+     }
+     .score-panel{
+         width: 200px;
+     }
+     .container{
+        display: flex;
+        flex-wrap: wrap;
+     }
+
+     .deck{
+         width: 340px;
+         height: 568px;
+     }
+
+     .deck .card{
+         height: 80px;
+         width: 80px;
+     }
+ }
+
+ 
