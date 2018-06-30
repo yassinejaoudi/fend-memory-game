@@ -192,4 +192,18 @@ Media query for phones with max width of 320 px on portrait mode
      }
  }
 
- 
+ /* 
+Media query for phones with max width of 568 px and max height of 320px on landscape mode
+ */
+
+ @media screen and (max-width: 568px) and (max-height: 320px){
+    
+     .deck{
+         width: 560px;
+         min-height: 300px;
+     }
+     .deck .card{
+         height: 60px;
+         width: 60px;
+     }
+ }
