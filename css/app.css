@@ -87,10 +87,6 @@ h1 {
     font-size: 33px;
 }
 
-.deck .card .disqualify{
-    pointer-events: none;
-    /* opacity: 0.9; */
-}
 
 /*
  * Styles for the Score Panel
@@ -207,3 +203,46 @@ Media query for phones with max width of 568 px and max height of 320px on lands
          width: 60px;
      }
  }
+
+ /* 
+Media query for phones with min width of 375 px and min height of 667 on portrait mode
+ */
+
+ @media screen and (min-width: 375px) and (min-height: 667px){
+    .h1{
+        font-weight: 150;
+    }
+    .score-panel{
+        width: 200px;
+    }
+    .container{
+       display: flex;
+       flex-wrap: wrap;
+    }
+
+    .deck{
+        width: 340px;
+        height: 568px;
+    }
+
+    .deck .card{
+        height: 80px;
+        width: 80px;
+    }
+ }
+
+  /* 
+Media query for phones with min width of 667 px and min height of 375px on landscape mode
+ */
+
+ @media screen and (min-width: 667px) and (min-height: 375px){
+    
+    .deck{
+        width: 560px;
+        min-height: 300px;
+    }
+    .deck .card{
+        height: 70px;
+        width: 70px;
+    }
+}
