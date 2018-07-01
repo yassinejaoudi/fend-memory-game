@@ -150,7 +150,12 @@ function reload(){
     modal.style.display = 'none';
     winModal.style.display = 'none';
     loseModal.style.display = 'none';
+    count = 0;
+    openCard.length = 0;
     moves.innerHTML = 0;
+    for (var i =0; i<nodeList.length; i++){
+        nodeList[i].classList.remove('show', 'open');
+    }
 }
 
 //wire restart button to reload initial state game
