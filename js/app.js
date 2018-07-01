@@ -73,8 +73,15 @@ function displayCard(card){
  // The logic part of the game
 var openCard = new Array();
 function opened(){
-    openCard.push(this);
-    displayCard(this);
+    // for(var i =1; i<2; i++){
+        if(openCard.length  == 0){
+            openCard.push(this);
+            displayCard(this);
+        }else if(this.innerHTML != openCard[0].innerHTML){
+            openCard.push(this);
+            displayCard(this);
+        }
+    // }
     var length = openCard.length;
     if(length === 2){
          if(openCard[0].type === openCard[1].type){
