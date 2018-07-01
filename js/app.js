@@ -67,25 +67,26 @@ function displayCard(card){
     //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
     nodeList[i].addEventListener('click', gameDecision);
     //Listen to clicks for count
-    nodeList[i].addEventListener('click', counter);
+    // nodeList[i].addEventListener('click', counter);
  }
 
  // The logic part of the game
 var openCard = new Array();
 function opened(){
-    // for(var i =1; i<2; i++){
-        if(openCard.length  == 0){
-            openCard.push(this);
-            displayCard(this);
-        }else if(this.innerHTML != openCard[0].innerHTML){
-            openCard.push(this);
-            displayCard(this);
-        }
-    // }
+    if(openCard.length  == 0){
+        openCard.push(this);
+        displayCard(this);
+        counter();
+    }else if(this.innerHTML != openCard[0].innerHTML){
+        openCard.push(this);
+        displayCard(this);
+        counter();
+    }
     var length = openCard.length;
     if(length === 2){
          if(openCard[0].type === openCard[1].type){
          cardMatch();
+         counter();
         }else{
          cardUnmatch();
         }
@@ -112,7 +113,6 @@ function cardUnmatch(){
 
 //Winning condition
 
-// let matchCards = document.getElementsByClassName('match');
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
@@ -160,11 +160,11 @@ restartBtn.addEventListener('click', ()=>{
     reload();
 });
 
-//TODO: Fix the click card multiple times
-
-//TODO: Click on the same card, the counter should not add the move
-
 //TODO: Wire the repeat button to startgame !
+
+//TODO: Wire the playAgain to start game!
+
+//TODO: Build the rating functionality!
 
 
 
