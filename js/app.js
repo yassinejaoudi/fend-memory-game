@@ -156,18 +156,20 @@ function reload(){
     for (var i =0; i<nodeList.length; i++){
         nodeList[i].classList.remove('show', 'open');
     }
+    game();
 }
 
 //wire restart button to reload initial state game
 let restartBtn = document.querySelector('.restart');
 restartBtn.addEventListener('click', ()=>{
-    game();
     reload();
 });
 
-//TODO: Wire the repeat button to startgame !
-
 //TODO: Wire the playAgain to start game!
+let playAgain = document.querySelector('#playAgain');
+playAgain.addEventListener('click', ()=>{
+    reload();
+});
 
 //TODO: Build the rating functionality!
 
