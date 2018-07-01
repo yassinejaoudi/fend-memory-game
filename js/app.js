@@ -116,17 +116,22 @@ function cardUnmatch(){
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
+let totalMoves = document.querySelector('#totalMoves');
+let movesTotal = document.querySelector('#movesTotal');
 
 function gameDecision(){
     if(matchCards.length === 16){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         winModal.style.display = 'block';
+        movesTotal.innerHTML = count;
     }
     if(count === 33){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
+        //Add the number of moves played
+        totalMoves.innerHTML = count;
     }
 }
 
