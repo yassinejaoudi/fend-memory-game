@@ -208,7 +208,7 @@ Media query for phones with max width of 568 px and max height of 320px on lands
 Media query for phones with min width of 375 px and min height of 667 on portrait mode
  */
 
- @media screen and (min-width: 375px) and (min-height: 667px){
+ @media screen and (min-width: 375px) and (min-height: 667px) and (max-width: 414px) and (max-height: 736px){
     .h1{
         font-weight: 150;
     }
@@ -235,7 +235,7 @@ Media query for phones with min width of 375 px and min height of 667 on portrai
 Media query for phones with min width of 667 px and min height of 375px on landscape mode
  */
 
- @media screen and (min-width: 667px) and (min-height: 375px){
+ @media screen and (min-width: 667px) and (min-height: 375px) and (max-width: 736px) and (max-height: 414px){
     
     .deck{
         width: 560px;
@@ -244,5 +244,32 @@ Media query for phones with min width of 667 px and min height of 375px on lands
     .deck .card{
         height: 70px;
         width: 70px;
+    }
+}
+
+/* 
+Media query for laptop
+ */
+
+@media screen and (max-width: 500px) and (min-width: 321px){
+    .h1{
+        font-weight: 150;
+    }
+    .score-panel{
+        width: 200px;
+    }
+    .container{
+       display: flex;
+       flex-wrap: wrap;
+    }
+
+    .deck{
+        width: 340px;
+        height: 568px;
+    }
+
+    .deck .card{
+        height: 80px;
+        width: 80px;
     }
 }
