@@ -4,6 +4,8 @@
 let cards = document.getElementsByClassName('card');
 let nodeList = [...cards];
 
+let matchCards = document.getElementsByClassName('match');
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -53,41 +55,39 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
- var displayCard = function(){
-        this.classList.toggle('show');
-        this.classList.toggle('open');
-        this.classList.toggle('disqualify');
+function displayCard(card){
+        card.classList.toggle('show');
+        card.classList.toggle('open');
  }
 
+
  for(var i=0; i<nodeList.length; i++){
-     nodeList[i].addEventListener('click', displayCard);
-     nodeList[i].addEventListener('click',opened);
-     //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
-     nodeList[i].addEventListener('click', gameDecision);
-     //Listen to clicks for count
-     nodeList[i].addEventListener('click', counter);
+    // nodeList[i].addEventListener('click', displayCard);
+    nodeList[i].addEventListener('click',opened);
+    //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
+    nodeList[i].addEventListener('click', gameDecision);
+    //Listen to clicks for count
+    nodeList[i].addEventListener('click', counter);
  }
 
  // The logic part of the game
 var openCard = new Array();
 function opened(){
-     openCard.push(this);
-     var length = openCard.length;
-     if(length === 2){
+    openCard.push(this);
+    displayCard(this);
+    var length = openCard.length;
+    if(length === 2){
          if(openCard[0].type === openCard[1].type){
          cardMatch();
         }else{
-         cardUnmatch();}
+         cardUnmatch();
+        }
     }
-
 }
 
 function cardMatch(){
-    let disable = openCard[0].getElementsByClassName('disqualify');
-    if(disable == 1){
-        openCard[0].classList.add('match');
-        openCard[1].classList.add('match');
-    }
+    openCard[0].classList.add('match');
+    openCard[1].classList.add('match');
     openCard[0].classList.remove('show', 'open');
     openCard[1].classList.remove('show', 'open');
     openCard = [];
@@ -103,10 +103,9 @@ function cardUnmatch(){
     }, 300);
 }
 
-
 //Winning condition
 
-let matchCards = document.getElementsByClassName('match');
+// let matchCards = document.getElementsByClassName('match');
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
@@ -157,6 +156,8 @@ restartBtn.addEventListener('click', ()=>{
 //TODO: Fix the click card multiple times
 
 //TODO: Click on the same card, the counter should not add the move
+
+//TODO: Wire the repeat button to startgame !
 
 
 
