@@ -6,6 +6,8 @@ let nodeList = [...cards];
 
 let matchCards = document.getElementsByClassName('match');
 
+let timer = document.querySelector('#timer');
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -125,6 +127,8 @@ function gameDecision(){
         modal.style.display = 'block';
         winModal.style.display = 'block';
         movesTotal.innerHTML = count;
+        //Display time played
+        // timer.
     }
     if(count === 33){
         //TODO: wrap into a fct
@@ -141,6 +145,10 @@ let moves = document.querySelector('.moves') ;
 function counter(){
     count++;
     moves.innerHTML = count;
+    //wire timer
+    if(count == 1){
+        startTime();
+    }
 }
 
 //Wire the close button with start game
@@ -162,6 +170,11 @@ function reload(){
         nodeList[i].classList.remove('show', 'open');
     }
     game();
+    //reset timer
+    min = 0;
+    sec = 0;
+    timer.innerHTML = "00 minutes : 00 seconds";
+    clearInterval(interval);
 }
 
 //wire restart button to reload initial state game
@@ -176,17 +189,24 @@ playAgain.addEventListener('click', ()=>{
     reload();
 });
 
+//Timer functionality
+
+var min= 0, sec = 0;
+var interval;
+function startTime(){
+     interval = setInterval(function(){
+        timer.innerHTML = min + " minutes : " + sec + " seconds";
+        sec++;
+        if(sec == 60){
+            min++;
+            sec = 0;
+        }
+        //Reload, player must be not paying attention on the game
+        if (min == 20){
+            reload();
+        }
+    }, 1000)
+}
+
 //TODO: Build the rating functionality!
-
-
-
-
-
-
-
-
-
-
-
-
 
