@@ -93,7 +93,7 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
+    text-ali30: left;
     width: 550px;
     margin-bottom: 10px;
 }
@@ -178,7 +178,10 @@ Media query for phones with max width of 320 px on portrait mode
          font-weight: 150;
      }
      .score-panel{
-         width: 200px;
+         width: 300px;
+     }
+     .score-panel #timer{
+         padding: 0;
      }
      .container{
         display: flex;
@@ -186,14 +189,15 @@ Media query for phones with max width of 320 px on portrait mode
      }
 
      .deck{
-         width: 340px;
-         height: 568px;
-     }
+        width: 320px;
+        min-height: 400px;
+        padding: 20px;
+    }
 
-     .deck .card{
-         height: 80px;
-         width: 80px;
-     }
+    .deck .card{
+        height: 65px;
+        width: 65px;
+    }
  }
 
  /* 
@@ -221,7 +225,10 @@ Media query for phones with min width of 375 px and min height of 667 on portrai
         font-weight: 150;
     }
     .score-panel{
-        width: 200px;
+        width: 300px;
+    }
+    .score-panel #timer{
+        padding: 0;
     }
     .container{
        display: flex;
@@ -229,13 +236,14 @@ Media query for phones with min width of 375 px and min height of 667 on portrai
     }
 
     .deck{
-        width: 340px;
+        width: 360px;
         height: 568px;
+        padding: 20px;
     }
 
     .deck .card{
-        height: 80px;
-        width: 80px;
+        height: 75px;
+        width: 75px;
     }
  }
 
@@ -259,12 +267,15 @@ Media query for phones with min width of 667 px and min height of 375px on lands
 Media query for laptop
  */
 
-@media screen and (max-width: 500px) and (min-width: 321px){
+@media screen and (max-width: 690px) and (min-width: 414px){
     .h1{
         font-weight: 150;
     }
     .score-panel{
-        width: 200px;
+        width: 300px;
+    }
+    .score-panel #timer{
+        padding: 0;
     }
     .container{
        display: flex;
@@ -272,12 +283,14 @@ Media query for laptop
     }
 
     .deck{
-        width: 340px;
+        width: 440px;
         height: 568px;
     }
 
     .deck .card{
-        height: 80px;
-        width: 80px;
+        height: 90px;
+        width: 90px;
     }
 }
+
+
