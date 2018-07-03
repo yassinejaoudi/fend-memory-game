@@ -18,9 +18,9 @@
 
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li class="greatStar"><i class="fa fa-star"></i></li>
+        		<li class="mediumStar"><i class="fa fa-star"></i></li>
+        		<li class="poorStar"><i class="fa fa-star"></i></li>
         	</ul>
 
             <span class="moves">0</span> Moves
@@ -88,14 +88,16 @@
                 <span class="closeButton">&times;</span>
                 <div class="winningModal">
                     <h2>🎉🎉🎉 Congratulations on winning the game! 🎉🎉🎉</h2>
-                    <p>You made <span class="movesTotal"> </span> of moves</p>
-                    <p>Total time: <span id="totalTime"> </span></p>
+                    <p>You made <span class="totalMoves"> </span> of moves</p>
+                    <p>Rating: <span id="rating">0 Stars 😱</span></p>
+                    <p>Total time: <span class="totalTime"> </span></p>
                     <p>👏🏽You deserve a round of applause👏🏽</p>
                 </div>
                 <div class="losingModal">
                     <h2>🚨 You have lost the game 🚨</h2>
                     <p>Total time: <span class="totalTime"> </span></p>
-                    <p>You made <span id="totalMoves"> </span> of moves</p>
+                    <p>Rating: <span id="rating">0 Stars 😱</span></p>
+                    <p>You made <span class="totalMoves"> </span> of moves</p>
                     <p>Try reducing the number of moves in the next attempt 🎲</p>
                     <button id="playAgain">
                         Play Again 😁

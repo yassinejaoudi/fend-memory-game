@@ -117,21 +117,23 @@ function cardUnmatch(){
 let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
-let totalMoves = document.querySelector('#totalMoves');
-let movesTotal = document.querySelector('#movesTotal');
+let totalMoves = document.querySelector('.totalMoves');
 let totalTime = document.querySelector('.totalTime');
-
+let rating =document.querySelector('#rating');
+let stars =document.querySelector('.stars');
 
 function gameDecision(){
     if(matchCards.length === 16){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         winModal.style.display = 'block';
-        movesTotal.innerHTML = count;
+        totalMoves.innerHTML = count;
         //Display time played
         totalTime.innerHTML = timer.innerHTML;
+        //Display rating
+        rating.innerHTML = stars.innerHTML;
         
-    }else if(count > 33 && count < 36 ){
+    }else if(count > 36 && count < 39 ){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
@@ -152,6 +154,7 @@ function counter(){
     if(count == 1){
         startTime();
     }
+    rateGame();
 }
 
 //Wire the close button with start game
@@ -178,7 +181,10 @@ function reload(){
     sec = 0;
     timer.innerHTML = "00 minutes : 00 seconds";
     clearInterval(interval);
-    
+    //reset stars
+    document.querySelector('.greatStar').style.display = "inline-block";
+    document.querySelector('.mediumStar').style.display = "inline-block";
+    document.querySelector('.poorStar').style.display = "inline-block";
 }
 
 //wire restart button to reload initial state game
@@ -212,4 +218,14 @@ function startTime(){
     }, 1000)
 }
 
-//TODO: Build the rating functionality!
+//TODO: Build the rating functionality! 
+function rateGame(){
+    if(count>21 && count<25){
+        document.querySelector('.greatStar').style.display = "none";
+    }
+    else if(count>24 && count<29){
+        document.querySelector('.mediumStar').style.display = "none";
+    }else if (count>28){
+        document.querySelector('.poorStar').style.display = "none";
+    }
+}

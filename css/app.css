@@ -164,6 +164,10 @@ h1 {
   text-align: center;
 }
 
+#rating li{
+    list-style: none;
+    display: inline;
+}
 
 /* 
 Media query for phones with max width of 320 px on portrait mode
