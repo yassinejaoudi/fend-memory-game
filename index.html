@@ -23,7 +23,9 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">0</span> Moves
+            <span class="moves">0</span> Moves
+            
+            <div id="timer"></div>
 
             <div class="restart">
         		<i class="fa fa-repeat"></i>
@@ -86,11 +88,13 @@
                 <span class="closeButton">&times;</span>
                 <div class="winningModal">
                     <h2>🎉🎉🎉 Congratulations on winning the game! 🎉🎉🎉</h2>
-                    <p>You made <span id="movesTotal"> </span> of moves</p>
+                    <p>You made <span class="movesTotal"> </span> of moves</p>
+                    <p>Total time: <span id="totalTime"> </span></p>
                     <p>👏🏽You deserve a round of applause👏🏽</p>
                 </div>
                 <div class="losingModal">
                     <h2>🚨 You have lost the game 🚨</h2>
+                    <p>Total time: <span class="totalTime"> </span></p>
                     <p>You made <span id="totalMoves"> </span> of moves</p>
                     <p>Try reducing the number of moves in the next attempt 🎲</p>
                     <button id="playAgain">
@@ -101,7 +105,7 @@
         </div>
     </div>
 
-      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

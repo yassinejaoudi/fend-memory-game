@@ -64,7 +64,6 @@ function displayCard(card){
 
 
  for(var i=0; i<nodeList.length; i++){
-    // nodeList[i].addEventListener('click', displayCard);
     nodeList[i].addEventListener('click',opened);
     //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
     nodeList[i].addEventListener('click', gameDecision);
@@ -120,6 +119,8 @@ let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
 let totalMoves = document.querySelector('#totalMoves');
 let movesTotal = document.querySelector('#movesTotal');
+let totalTime = document.querySelector('.totalTime');
+
 
 function gameDecision(){
     if(matchCards.length === 16){
@@ -128,14 +129,16 @@ function gameDecision(){
         winModal.style.display = 'block';
         movesTotal.innerHTML = count;
         //Display time played
-        // timer.
-    }
-    if(count === 33){
+        totalTime.innerHTML = timer.innerHTML;
+        
+    }else if(count > 33 && count < 36 ){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
         //Add the number of moves played
         totalMoves.innerHTML = count;
+        //Displayed time played
+        totalTime.innerHTML = timer.innerHTML;
     }
 }
 
@@ -175,6 +178,7 @@ function reload(){
     sec = 0;
     timer.innerHTML = "00 minutes : 00 seconds";
     clearInterval(interval);
+    
 }
 
 //wire restart button to reload initial state game
@@ -209,4 +213,3 @@ function startTime(){
 }
 
 //TODO: Build the rating functionality!
-
