@@ -65,10 +65,7 @@ function displayCard(card){
 
  for(var i=0; i<nodeList.length; i++){
     nodeList[i].addEventListener('click',opened);
-    //TODO: Check if this is unnecessary; as to implement it once the all the cards are matched
     nodeList[i].addEventListener('click', gameDecision);
-    //Listen to clicks for count
-    // nodeList[i].addEventListener('click', counter);
  }
 
  // The logic part of the game
@@ -128,18 +125,14 @@ function gameDecision(){
         modal.style.display = 'block';
         winModal.style.display = 'block';
         totalMoves.innerHTML = count;
-        //Display time played
         totalTime.innerHTML = timer.innerHTML;
-        //Display rating
         rating.innerHTML = stars.innerHTML;
         
     }else if(count > 36 && count < 39 ){
         //TODO: wrap into a fct
         modal.style.display = 'block';
         loseModal.style.display = 'block';
-        //Add the number of moves played
         totalMoves.innerHTML = count;
-        //Displayed time played
         totalTime.innerHTML = timer.innerHTML;
     }
 }
@@ -193,14 +186,13 @@ restartBtn.addEventListener('click', ()=>{
     reload();
 });
 
-//TODO: Wire the playAgain to start game!
+//Wire the playAgain to start game!
 let playAgain = document.querySelector('#playAgain');
 playAgain.addEventListener('click', ()=>{
     reload();
 });
 
 //Timer functionality
-
 var min= 0, sec = 0;
 var interval;
 function startTime(){
@@ -211,14 +203,13 @@ function startTime(){
             min++;
             sec = 0;
         }
-        //Reload, player must be not paying attention on the game
         if (min == 20){
             reload();
         }
     }, 1000)
 }
 
-//TODO: Build the rating functionality! 
+//Rating functionality! 
 function rateGame(){
     if(count>21 && count<25){
         document.querySelector('.greatStar').style.display = "none";
