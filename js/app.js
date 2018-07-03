@@ -187,7 +187,7 @@ restartBtn.addEventListener('click', ()=>{
 });
 
 //Wire the playAgain to start game!
-let playAgain = document.querySelector('#playAgain');
+let playAgain = document.querySelector('.playAgain');
 playAgain.addEventListener('click', ()=>{
     reload();
 });
