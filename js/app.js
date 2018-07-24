@@ -16,7 +16,7 @@ let timer = document.querySelector('#timer');
  */
 const deck = document.querySelector('.deck');
 function game(){
-    var shuffleCards = shuffle(nodeList);
+    let shuffleCards = shuffle(nodeList);
     for (var i = 0; i<shuffleCards.length; i++){
         [].forEach.call(shuffleCards, function(item){
             deck.appendChild(item);
@@ -69,8 +69,8 @@ function displayCard(card){
  }
 
  // The logic part of the game
-var openCard = new Array();
-function opened(){
+openCard = [];
+function opened(){  
     if(openCard.length  == 0){
         openCard.push(this);
         displayCard(this);
@@ -216,7 +216,5 @@ function rateGame(){
     }
     else if(count>24 && count<29){
         document.querySelector('.mediumStar').style.display = "none";
-    }else if (count>28){
-        document.querySelector('.poorStar').style.display = "none";
     }
 }
