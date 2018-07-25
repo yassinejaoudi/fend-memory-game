@@ -115,26 +115,32 @@ let modal = document.querySelector('.modal');
 let winModal = document.querySelector('.winningModal');
 let loseModal = document.querySelector('.losingModal');
 let totalMoves = document.querySelector('.totalMoves');
+let movesTotal = document.querySelector('#movesTotal');
 let totalTime = document.querySelector('.totalTime');
+let timeTotal = document.querySelector('#timeTotal');
 let rating =document.querySelector('#rating');
 let stars =document.querySelector('.stars');
+let rate = document.querySelector('#rate');
 
 function gameDecision(){
     if(matchCards.length === 16){
-        //TODO: wrap into a fct
-        modal.style.display = 'block';
         winModal.style.display = 'block';
-        totalMoves.innerHTML = count;
-        totalTime.innerHTML = timer.innerHTML;
-        rating.innerHTML = stars.innerHTML;
-        
-    }else if(count > 36 && count < 39 ){
+        showContent();
+    }else if(count > 40 && count < 45 ){
         //TODO: wrap into a fct
-        modal.style.display = 'block';
         loseModal.style.display = 'block';
-        totalMoves.innerHTML = count;
-        totalTime.innerHTML = timer.innerHTML;
+        modal.style.display = 'block';
+        movesTotal.innerHTML = count;
+        timeTotal.innerHTML = timer.innerHTML;
+        rate.innerHTML = stars.innerHTML;
     }
+}
+
+function showContent(){
+    modal.style.display = 'block';
+    totalMoves.innerHTML = count;
+    totalTime.innerHTML = timer.innerHTML;
+    rating.innerHTML = stars.innerHTML;
 }
 
 //Moves Counter
@@ -153,7 +159,7 @@ function counter(){
 //Wire the close button with start game
 let closeBtn = document.querySelector('.closeButton');
 closeBtn.addEventListener('click', ()=>{
-    game();
+    // game();
     reload();
 });
 
@@ -177,7 +183,6 @@ function reload(){
     //reset stars
     document.querySelector('.greatStar').style.display = "inline-block";
     document.querySelector('.mediumStar').style.display = "inline-block";
-    document.querySelector('.poorStar').style.display = "inline-block";
 }
 
 //wire restart button to reload initial state game
@@ -187,8 +192,13 @@ restartBtn.addEventListener('click', ()=>{
 });
 
 //Wire the playAgain to start game!
-let playAgain = document.querySelector('.playAgain');
-playAgain.addEventListener('click', ()=>{
+let playAgainLose = document.querySelector('.playAgainLose');
+playAgainLose.addEventListener('click', ()=>{
+    reload();
+});
+
+let playAgainWin = document.querySelector('.playAgainWin');
+playAgainWin.addEventListener('click', ()=>{
     reload();
 });
 
@@ -196,7 +206,7 @@ playAgain.addEventListener('click', ()=>{
 var min= 0, sec = 0;
 var interval;
 function startTime(){
-     interval = setInterval(function(){
+      interval = setInterval(function(){
         timer.innerHTML = min + " minutes : " + sec + " seconds";
         sec++;
         if(sec == 60){
@@ -211,10 +221,10 @@ function startTime(){
 
 //Rating functionality! 
 function rateGame(){
-    if(count>21 && count<25){
+    if(count>24 && count<30){
         document.querySelector('.greatStar').style.display = "none";
     }
-    else if(count>24 && count<29){
+    else if(count>29 && count<36){
         document.querySelector('.mediumStar').style.display = "none";
     }
 }

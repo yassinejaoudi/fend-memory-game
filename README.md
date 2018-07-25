@@ -15,4 +15,6 @@ Matching cards in the shortest time and with the fewest moves is the chanllenge 
 
 I manipulated the DOM with JS and ES6
 
+Libraries used: Google Font API, Font Awesome Boostrap CDN by StackPath.
+
 
